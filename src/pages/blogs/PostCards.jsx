@@ -9,10 +9,13 @@ export const PostCards = () => {
   const { blogs, isLoading, isError, error } = useSelector(
     (state) => state.blogs
   );
+
+  const { tags, search } = useSelector((state) => state.filter);
+  console.log(tags, search);
   //dispacth action to get blogs
   useEffect(() => {
-    dispatch(fetchBlogs());
-  }, [dispatch]);
+    dispatch(fetchBlogs({ tags, search }));
+  }, [dispatch, tags, search]);
 
   //pagination
   const [currentPage, setCurrentPage] = useState(1);

@@ -1,15 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Search } from "./Search";
 
 export const Navbar = () => {
   return (
     <header className=" flex items-center justify-between py-4 border-b">
-      <Link
-        to="/"
-        className="text-purple-800 uppercase font-bold px-2 lg:px-0 "
-      >
+      <a href="/" className="text-purple-800 uppercase font-bold px-2 lg:px-0 ">
         LOGO
-      </Link>
+      </a>
+      <Search />
       <nav>
         <ul className="inline-flex items-center">
           <li className="px-2 md:px-4">
